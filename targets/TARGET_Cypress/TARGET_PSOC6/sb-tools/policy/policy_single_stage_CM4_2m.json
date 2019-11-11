@@ -60,6 +60,7 @@
                 ],
                 "id": 0,
                 "launch": 4,
+                "monotonic": 0,
                 "smif_id": 0,
                 "upgrade": false,
                 "upgrade_auth": [
@@ -68,17 +69,17 @@
                 "resources": [
                     {
                         "type": "FLASH_PC1_SPM",
-                        "address": 269287424,
+                        "address": 270336000,
                         "size": 65536
                     },
                     {
                         "type": "SRAM_SPM_PRIV",
-                        "address": 134348800,
-                        "size": 65536
+                        "address": 135004160,
+                        "size": 262144
                     },
                     {
                         "type": "SRAM_DAP",
-                        "address": 134397952,
+                        "address": 135184384,
                         "size": 16384
                     }
                 ]
@@ -87,27 +88,45 @@
                 "boot_auth": [
                     8
                 ],
+                "boot_keys": [
+                    { "kid": 8, "key": "app_keys/USERAPP_CM4_KEY.json" }
+                ],
                 "id": 4,
                 "monotonic": 0,
                 "smif_id": 0,
                 "upgrade": true,
+                "version": "0.1",
+                "encrypt": false,
+                "encrypt_key": "keys/aes128.key",
+                "encrypt_key_id": 1,
+                "encrypt_peer": "dev_pub_key.pem",
                 "upgrade_auth": [
                     8
                 ],
-
+                "upgrade_keys": [
+                    { "kid": 8, "key": "app_keys/USERAPP_CM4_KEY.json" }
+                ],
                 "resources": [
                     {
                         "type": "BOOT",
                         "address": 268435456,
-                        "size": 655360
+                        "size": 950272
                     },
                     {
                         "type": "UPGRADE",
-                        "address": 269090816,
-                        "size": 655360
+                        "address": 269385728,
+                        "size": 950272
                     }
                 ]
             }
         ]
+    },
+    "cy_bootloader":
+    {
+        "mode": "debug"
+    },
+    "provisioning":
+    {
+        "packet_dir": "packet"
     }
 }
